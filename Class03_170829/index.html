@@ -1,0 +1,45 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Fun!</title>
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <h1 id="title">My Travel Log</h1>
+    <h2 class="places-ive-been">Places I've been to</h2>
+    <ul>
+        <li>Beijing</li>
+        <li>Seoul</li>
+        <li>Nashville</li>
+    </ul>
+    <h2>Places I want to visit</h2>
+    <ul>
+        <li>London</li>
+        <li>Paris</li>
+        <li>Istanbul</li>
+    </ul>
+    
+    <script>
+        $(document).ready( function() {
+            /* Finding Elements */
+            console.log("jQuery is ready!");
+            console.log( $("h1") );
+            console.log( $("h2") );
+            console.log( $("#title") );
+            console.log( $(".places-ive-been") );
+            /* Changing Elements */
+            $("#title").css( {
+                "color" : "red",
+                "textDecoration" : "underline",
+                "fontSize" : "60px"
+            });
+            $("#title").text("My Diary")
+            
+        });
+    </script>
+</body>
+
+</html>
