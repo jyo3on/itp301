@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>lab02: jQuery Basics</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <style>
+        /* 8 */
+        .redborder {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to my page</h1>
+    <button class="change-pic">Change picture</button>
+    <button class="change-title">Change title</button>
+    <button class="add-border">Add border</button>
+    <button class="remove-border">Remove border</button>
+    <div id="first-div">Div1</div>
+    <div class="highlight">Div2</div>
+    <div>Div3</div>
+    
+    <!-- 5 -->
+    <img src="images/paris.jpg" />
+    
+    <script>
+        // 2
+        $(document).ready( function() {
+            // 3
+            $("div").css("backgroundColor", "orange");
+            // 4
+            $("div.highlight").css({
+                "backgroundColor" : "yellow",
+                "color" : "blue",
+                "fontWeight" : "bold"
+            });
+            // 6
+            $(".change-pic").click( function() {
+                $("img").attr("src", "images/istanbul.jpg");
+            });
+            // 7
+            $(".change-title").click( function(){
+               $("h1").text("I love U"); 
+            });
+            // 9
+            $(".add-border").click( function(){
+                $("h1").addClass("redborder");
+            });
+            // 10
+            $(".remove-border").click( function(){
+                $("h1").removeClass("redborder");
+            });
+        });
+    </script>
+</body>
+</html>

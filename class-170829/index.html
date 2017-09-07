@@ -1,0 +1,71 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Fun!</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <style>
+        .opaque {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">My Travel Log</h1>
+    <h2 class="places-ive-been">Places I've been to</h2>
+    <ul class="cities">
+        <li>Beijing</li>
+        <li>Seoul</li>
+        <li>Nashville</li>
+    </ul>
+    <h2>Places I want to visit</h2>
+    <ul>
+        <li id="london">London</li>
+        <li id="paris">Paris</li>
+        <li id="istanbul">Istanbul</li>
+    </ul>
+    
+    <button>Make picture transparent</button> <br/>
+    
+    <img class="location" src="images/london.jpg" />
+    
+    <script>
+        $(document).ready( function() {
+            /* Finding Elements */
+            console.log("jQuery is ready!");
+            console.log( $("h1") );
+            console.log( $("h2") );
+            console.log( $("#title") );
+            console.log( $(".places-ive-been") );
+            /* Changing Elements */
+            $("#title").css( {
+                "color" : "red",
+                "textDecoration" : "underline",
+                "fontSize" : "60px"
+            }); // dash into Capital Letter
+            $("#title").text("My Diary");
+            $(".cities").html("<p>City</p>");
+            /* Listening Events */
+            $("#title").click( function(){
+                $(".cities").css("color", "blue"); 
+                $("#title").css("color", "orange");
+            });
+            $("#london").click( function(){
+               $(".location").attr("src", "images/london.jpg") 
+            });
+            $("#paris").click( function(){
+               $(".location").attr("src", "images/paris.jpg") 
+            });
+            $("#istanbul").click( function(){
+               $(".location").attr("src", "images/istanbul.jpg") 
+            });
+            $("button").click( function(){
+               $(".location").addClass("opaque"); 
+            });
+        });
+    </script>
+</body>
+
+</html>
