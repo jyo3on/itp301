@@ -1,0 +1,24 @@
+#outercontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#thumbnailcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+h1 {
+    text-align: center;
+}
+#main img {
+    width: 500px;
+    height: 385px;
+}
+.thumbnail {
+    display: inline-block;
+    margin: 3px;
+    width: 170px;
+    height: 130px;
+}
