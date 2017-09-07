@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Vegas Example</title>
+        <style>
+            #container {
+                width:	800px;
+                margin:	auto;
+            }
+            #thumbnails, #main, .controls {
+                text-align: center;
+              margin: 10px 0px;
+            }
+            .thumb {
+                height: 80px;
+                opacity: 0.5;
+                margin: 5px;
+            }
+            #caption {
+                font-size: 14pt;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+        <div id="thumbnails">
+            <img src="images/1.jpg" id="thumb1" class="thumb">
+            <img src="images/2.jpg" id="thumb2" class="thumb">
+            <img src="images/3.jpg" id="thumb3" class="thumb">
+<!--
+            <img src="images/1.jpg" id="thumb1" class="thumb" onclick=" document.getElementById('main-img').src = 'images/1.jpg'; document.getElementById('caption').innerHTML = 'Welcome to Vegas'; ">
+            <img src="images/2.jpg" id="thumb2" class="thumb" onclick=" document.getElementById('main-img').src = 'images/2.jpg'; document.getElementById('caption').innerHTML = 'Bellagio Fountain Show'; ">
+            <img src="images/3.jpg" id="thumb3" class="thumb" onclick=" document.getElementById('main-img').src = 'images/3.jpg'; document.getElementById('caption').innerHTML = 'Haha'; ">
+-->
+        </div>
+        <div class="controls">
+            <span id="small">Small</span> |
+            <span id="medium">Medium</span> |
+            <span id="large">Large</span>
+        </div>
+        <div class="controls">
+          Height: <input type="text" placeholder="400px" id="heightField">
+          <input id="submitButton" type="submit">
+        </div>
+        <div id="main">
+            <img src="images/2.jpg" id="main-img">
+            <div id="caption">
+                Welcome to Vegas
+            </div>
+        </div>
+        </div>
+
+        <script>
+            
+            /* IMAGE & CAPTION */
+            
+            document.getElementById("thumb1").onclick = function() {
+                changeImage( "images/1.jpg", "Welcome to Vegas" )
+            }
+            
+            document.getElementById("thumb2").onclick = function() {
+                changeImage( "images/2.jpg", "Bellagio Fountain Show" )
+            }
+            
+            document.getElementById("thumb3").onclick = function() {
+                changeImage( "images/3.jpg", "The Strip" )
+//                //Change the image
+//                document.getElementById("main-img").src = "images/3.jpg";
+//                //Change the caption
+//                document.getElementById("caption").innerHTML = "The Strip";
+            }
+            
+            function changeImage( newSource, newCaption ) {
+                //Change the image
+                document.getElementById("main-img").src = newSource;
+                //Change the caption
+                document.getElementById("caption").innerHTML = newCaption;
+            }
+            
+            /* SIZE */
+            
+            document.getElementById("small").onclick = function() {
+                changeWidth( "100px" );
+            }
+            
+            document.getElementById("medium").onclick = function() {
+                changeWidth( "300px" );
+            }
+            
+            document.getElementById("large").onclick = function() {
+                changeWidth( "700px" );
+            }
+            
+            
+            function changeWidth( newWidth ) { //parameter for input
+                //px required!
+                document.getElementById("main-img").style.width = newWidth;
+            }
+            
+//            // Function declaration
+//            function alertMe() {
+//                // code goes here 
+//                //(doesn't happen until this func is called)
+//                alert("Hi!!");
+//            }
+//            
+//            //Calls the function alertMe();
+//            alertMe();
+          
+          document.getElementById("submitButton").onclick = function() {
+              // 1. Get what user typed in
+              var userHeight = document.getElementById("heightField").value;
+              
+              // 2. Change the main image height to what the user typed in
+              changeHeight( userHeight );
+          }
+          
+          function changeHeight( newHeight ) {
+              document.getElementById("main-img").style.height = newHeight;
+          }
+            
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+
+    object
+        property - style(css), src, href (그래서 이미지 바꿀 땐 style 아닌 attr)
+        methods - getElementById
+
+-->

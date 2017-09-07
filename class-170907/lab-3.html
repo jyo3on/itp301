@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functions Lab</title>
+</head>
+<body>
+  <div style="float:left; width:500px;">
+    <form id="form1" name="f1" method="post" action="">
+      <p>Image Scaling</p>
+      <p>
+        <label>Width
+          <input name="w" type="text" id="widthField" placeholder="EX) 100px" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Height 
+          <input name="h" type="text" id="heightField" placeholder="EX) 100px"/>
+        </label>
+      </p>
+      <p>
+        <label>
+          Border
+          <input name="b" type="text" id="borderField" placeholder="EX) 3px solid red" />
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="button" name="Button" value="Scale Image" id="scaleButton">
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="button" name="Button" value="Current Image Info" id="infoButton">
+        </label>
+      </p>
+    </form>
+  </div>
+  <div style="float:left;width:400px">
+    <img name="theimage" id="theimage" src="http://scf.usc.edu/~nayeonki/itp301/familyguy.jpg" style="width:320px; height:400px" />
+  </div>
+  <script>
+
+    /******
+     * The two event handlers are listed here.
+    ******/
+
+    
+    document.getElementById("scaleButton").onclick = function() {
+      // Call the scaleImage() function here. When scaleImage() is called, get the width, border and height that the user typed in. Then pass those three data into scaleImage() parameters.
+      var userWidth = document.getElementById("widthField").value;
+      var userHeight = document.getElementById("heightField").value;
+      var userBorder = document.getElementById("borderField").value;
+      scaleImage( userWidth, userHeight, userBorder );
+    }
+
+    document.getElementById("infoButton").onclick = function() {
+      // Call the imageInfo() function here.
+      var currentWidth = document.getElementById("theimage").style.width;
+      var currentHeight = document.getElementById("theimage").style.height;
+      var currentBorder = document.getElementById("theimage").style.border;
+      imageInfo( currentWidth, currentHeight, currentBorder );
+    }
+    /******
+     * This function has three parameters - when it's called, three pieces of information should be given.
+     * These three parameters are newWidth, newHeight, and border.
+     * This function should have three lines of code.
+     * Each line should set a new style property for the image: width, height, and border.
+     * There is only one image on the page, so you don't have to pass the image name as a parameter.
+     ******/
+    function scaleImage (newWidth, newHeight, newBorder) {
+      // Write function code here.
+      document.getElementById("theimage").style.width = newWidth; 
+      document.getElementById("theimage").style.height = newHeight;
+      document.getElementById("theimage").style.border = newBorder; 
+    }
+
+    /******
+     * This function gathers all information about the image and outputs it to an alert box.
+     * The final message should say "The image has height of X, width of Y, and border of Z".
+     ******/
+    function imageInfo(x, y, z){
+      alert("The image has height of " + y + ", width of " + x +", and border of " + z);
+    }
+  </script>
+</body>
+</html>
