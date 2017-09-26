@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Color Setter</title>
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      #left {
+        width: 30%;
+        padding: 50px;
+        float: left;
+        background-color: #efefef;
+      }
+
+      #right {
+        width: 70%;
+        padding: 100px;
+        float: left;
+      }
+      #right p {
+        brightness: -0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="left">
+      <div>
+        <h2>Background</h2>
+        <form>
+            <input id="bgred" type="radio" name="bgcolor" value="#F44336"/>
+            <label for="bgred">Red</label><br>
+            <input id="bgpink" type="radio" name="bgcolor" value="#E91E63"/>
+            <label for="bgpink">Pink</label><br>
+            <input id="bgpurple" type="radio" name="bgcolor" value="#9C27B0">
+            <label for="bgpurple">Purple</label><br>
+            <input id="bgindigo" type="radio" name="bgcolor" value="#3F51B5"/>
+            <label for="bgindigo">Indigo</label><br>
+            <input id="bgblue" type="radio" name="bgcolor" value="#2196F3"/>
+            <label for="bgblue">Blue</label><br>
+            <input id="bgteal" type="radio" name="bgcolor" value="#009688"/>
+            <label for="bgteal">Teal</label><br>
+            <input id="bgamber" type="radio" name="bgcolor" value="#FFC107"/>
+            <label for="bgamber">Amber</label><br>
+            <input id="bglime" type="radio" name="bgcolor" value="#CDDC39"/>
+            <label for="bglime">Lime</label><br>
+            <input id="bgorange" type="radio" name="bgcolor" value="#FF9800"/>
+            <label for="bgorange">Orange</label><br>
+            <input id="bgyellow" type="radio" name="bgcolor" value="#FFEB3B"/>
+            <label for="bgyellow">Yellow</label><br>
+        </form>
+      </div>
+      <div>
+        <h2>Text</h2>
+        <form>
+            <input id="textred" type="radio" name="textcolor" value="#F44336"/>
+            <label for="textred">Red</label><br>
+            <input id="textpink" type="radio" name="textcolor" value="#E91E63"/>
+            <label for="textpink">Pink</label><br>
+            <input id="textpurple" type="radio" name="textcolor" value="#9C27B0">
+            <label for="textpurple">Purple</label><br>
+            <input id="textindigo" type="radio" name="textcolor" value="#3F51B5"/>
+            <label for="textindigo">Indigo</label><br>
+            <input id="textblue" type="radio" name="textcolor" value="#2196F3"/>
+            <label for="textblue">Blue</label><br>
+            <input id="textteal" type="radio" name="textcolor" value="#009688"/>
+            <label for="textteal">Teal</label><br>
+            <input id="textamber" type="radio" name="textcolor" value="#FFC107"/>
+            <label for="textamber">Amber</label><br>
+            <input id="textlime" type="radio" name="textcolor" value="#CDDC39"/>
+            <label for="textlime">Lime</label><br>
+            <input id="textorange" type="radio" name="textcolor" value="#FF9800"/>
+            <label for="textorange">Orange</label><br>
+            <input id="textyellow" type="radio" name="textcolor" value="#FFEB3B"/>
+            <label for="textyellow">Yellow</label><br>
+        </form>
+      </div>
+    </div>
+    <div id="right">
+      <h1>Jaeyun Song</h1>
+      <p><strong>Exchange student from Seoul National University, South Korea<br>
+        1996.08.11 | Female<br>
+        Double majoring Business & Computer Science</strong></p>
+      <p>In March 2016, I became a member of Likelion. Likelion is a web programming education program, which has
+      won Google Impact Challenge last year. It is also a non-profit governmental organization acknowledged by United Nations,
+      providing education for global citizenship through MOOC and Youth Hub Chat Presentation. For almost 2,000 students
+      from 130 universities, Likelion provides a comprehensive set of quality lectures and assignments through an online lecture
+      platform 'Class Lion'. </p>
+
+      <p>Based on this experience, this year I started to work for JPUB, a representative IT publisher company in Korea,
+      as a beta reader testing the codes and contents of the books that aren't yet published. All I get is a copy of a book I tested
+      - since I need to read the text - and an honor to write a book review that goes inside. I'm doing this because I want more
+      people to get opportunity to get a better information about computer science field.</p>
+
+      <p>Shashagungun(http://shashagungun.com) is a service that I and my team have launched early this year. It's a
+      poster platform for my school, Seoul National University, that collects the posters and arranges them into a neat online
+      platform. It allows the students to search for a specific poster by using the categorization and filters. Many posters have
+      been uploaded in Shashagungun, and thankfully it won the first place in the school service contest 'SNULife SANDBOX'
+      getting 1,000,000 won as a prize. All the cash are being used for maintaining the web service and newly developing
+      mobile applications. </p>
+     
+    </div>
+
+    <script type="text/javascript">
+
+      document.getElementById("bgred").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bgblue").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bgamber").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bgpink").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bgpurple").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bgindigo").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bgteal").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bglime").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bgorange").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+      document.getElementById("bgyellow").onclick = function() {
+          var bgInput = this.value;
+          changeBg(bgInput);
+      }
+
+      document.getElementById("textred").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textblue").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textamber").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textpink").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textpurple").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textindigo").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textteal").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textlime").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textorange").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+      document.getElementById("textyellow").onclick = function() {
+          var textInput = this.value;
+          changeText(textInput);
+      }
+
+        var texts = document.getElementsByClassName("textcolor");
+        var inputText;
+        for (var i = 0; i < texts.length; i++) {
+            if (texts[i].checked) {
+                inputText = texts[i].value;
+                changeText(inputText);
+            }
+        }
+
+        function changeBg (userBg){
+          document.getElementById("right").style.backgroundColor= userBg;
+        }
+        function changeText(userText){
+          document.getElementById("right").style.color= userText;
+        }
+    </script>
+  </body>
+</html>
