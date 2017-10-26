@@ -1,2 +1,3 @@
 # itp301
-for USC itp301 Interactive Web Development Class
+
+A repository for materials & assignments of 'Interactive Web Development' course at USC
