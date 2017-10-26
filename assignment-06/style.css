@@ -1,0 +1,48 @@
+body {
+  min-height: 100vh;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 50vh;
+  font-family: '애플 SD 산돌고딕 Neo', Apple SD Gothic Neo, Helvetica, sans-serif;
+}
+div:first-of-type {
+  justify-content: center;
+}
+h1 {
+  font-weight: 100;
+}
+input, button {
+  box-sizing: border-box;
+  display: block;
+  width: 300px;
+  padding: 1.2em 1.8em;
+  margin: 0 0 1.8em;
+  transition: all .5s ease-in-out;
+  border-radius: 300px;
+  border: 1px solid transparent;
+}
+input {
+  border-color: #efefef;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+}
+input:focus, input:hover {
+  outline: none;
+  border-color: #ddd;
+}
+#searchButton, #showAllButton:hover {
+  color: olive;
+  width: 200px;
+  background-color: transparent;
+  border-color: olive;
+}
+#showAllButton, #searchButton:hover {
+  color: white;
+  width: 200px;
+  background-color: olive;
+}
+button:hover {
+  cursor: pointer;
+}

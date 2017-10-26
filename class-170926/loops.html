@@ -13,8 +13,8 @@
 		<button id="addButton">Add</button>
 		<button id="showAllButton">Show All</button>
 		<button id="first3Button">Show First 3</button>
-    <button id="last3Button">Show Recently Added Item</button>
-    <button id="last3Button">Show Random</button>
+    <button id="showRecentButton">Show Recently Added Item</button>
+    <button id="randomButton">Show Random</button>
 	</div>
 	<br/>
   Print messages here:
@@ -78,6 +78,26 @@
             for (var i = 0; i < 3; i++) {
                 document.querySelector("#msg").innerHTML += groceryList[i] + "<br/>";
             }
+        }
+        
+        document.querySelector("#showRecentButton").onclick = function() {
+            // Clear out the #msg div
+            document.querySelector("#msg").innerHTML = "";
+            // Display just the very last items on the grocery list
+            var lastIndex = groceryList.length - 1;
+            document.querySelector("#msg").innerHTML = groceryList[lastIndex];
+        }
+        
+        document.querySelector("#randomButton").onclick = function() {
+            var randomNumber = Math.random(); // generates decimal number from 0-1
+            // LENGTH is USEFUL
+            randomNumber = randomNumber * groceryList.length;
+            
+            // Lastly, Math.floor()
+            randomNumber = Math.floor( randomNumber );
+            
+            // Display random item on the grocery list
+            document.querySelector("#msg").innerHTML = groceryList[randomNumber];
         }
 
         function addItem(item) {

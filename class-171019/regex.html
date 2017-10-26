@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RegEx Searching</title>
+</head>
+<body>
+	<h2>My Contacts</h2>
+	<input type="text" id="userInput" placeholder="Search"/>
+	<input type="checkbox" id="case-insensitive">Case insensitive
+	<input type="checkbox" id="all-matches">All matches
+	<button id="button">Search</button>
+	<div id="result"></div>
+  <script>
+    var names = ["Michael Scott", "Jim Halpert", "Dwight Schrute", "Pam Beesley", "Andy Bernard"];
+    
+    document.querySelector("#button").onclick = function() {
+      var userInput = document.querySelector("#userInput").value;
+      var result = "";
+      var modifier;
+      
+      if ( document.querySelector("#case-insensitive").checked == true ) {
+         modifier = "i";
+      }
+        
+      //modifier undefined -> works fine. just ignored
+      var regex = new RegExp(userInput, modifier);
+      
+      for(var i=0; i<names.length; i++) {
+        //.test returns true if there is a match
+        if ( regex.test(names[i]) ) {
+          result = names[i];
+          document.querySelector("#result").innerHTML = result + "<br/>";
+        }
+      }
+      if(result == "") {
+        document.querySelector("#result").innerHTML = "Sorry, no results were found.";
+      }
+    }
+  </script>
+</body>
+</html>
