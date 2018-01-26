@@ -1,132 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Password Validator</title>
-	<style>
-		#container {
-			width:	800px;
-			margin:	auto;
-		}
-		h1 {
-			text-align: center;
-		}
-		#password-container {
-			float:	left;
-			margin:	100px 80px;
-		} 
-		#validation-rules {
-			float:	left;
-			margin:	10px 0px 0px 20px;
-			text-align: center;
-		}
-		.v-rule {
-			background-color: #FF0;
-			text-align: center;
-			width: 400px;
-			height:	30px;
-			line-height: 30px;
-			margin:	10px 0px;
+  <meta charset="UTF-8">
+  <title>Password Validator</title>
+  <style>
+    #container {
+      width: 800px;
+      margin: auto;
+    }
 
-		}
-	</style>
+    h1 {
+      text-align: center;
+    }
+
+    #password-container {
+      float: left;
+      margin: 100px 80px;
+    }
+
+    #validation-rules {
+      float: left;
+      margin: 10px 0px 0px 20px;
+      text-align: center;
+    }
+
+    .v-rule {
+      background-color: #FF0;
+      text-align: center;
+      width: 400px;
+      height: 30px;
+      line-height: 30px;
+      margin: 10px 0px;
+
+    }
+
+  </style>
 </head>
-<body>
-	<div id="container">
-		<h1>Password Validator</h1>
-		<div id="password-container">
-			Password: <input type="text" id="password-input" />
-		</div>
-		<div id="validation-rules">
-			Validation Rules:
-			<div class="v-rule" id="rule1">1: Cannot be empty/blank.</div>
-			<div class="v-rule" id="rule2">2: Must contain at least 5 characters.</div>
-			<div class="v-rule" id="rule3">3: Must have at least one special character @ or #.</div>
-			<div class="v-rule" id="rule4">4: Must contain upper AND lower case characters.</div>
-			<div class="v-rule" id="rule5">5: Cannot contain word 'password' (case insensitive).</div>
-		</div>
-		<br style="clear:both">
-	</div>
 
-	<script>
-		var colorValid = '#0F0';
-		var colorInvalid = '#F00';
-    
-        document.querySelector("#password-input").oninput = function() {
-            var userInput = document.querySelector("#password-input").value;
-            //console.log(userInput);
-            validatePass(userInput);
-        }
-    
-		function validatePass(password){
-            
-            //1: Cannot be empty or blank
-            if( password == "" || password.length == 0 ) {
-                document.querySelector("#rule1").style.backgroundColor = colorInvalid;
-            }
-            else {
-                document.querySelector("#rule1").style.backgroundColor = colorValid;
-            }
-            
-            //2: Must contain at least 5 characters
-            if( password.length >= 5 ) {
-                document.querySelector("#rule2").style.backgroundColor = colorValid;
-            }
-            else {
-                document.querySelector("#rule2").style.backgroundColor = colorInvalid;
-            }
-            
-            //3: Must have at least one special character @ or #
-            if( password.indexOf("@") > -1 || password.indexOf("#") > -1 ) { 
-                /* indexOf tells you only the first time it happened <-> lastIndexOf tells you only the last time
-                if nowhere, they give us -1 negative one */
-                document.querySelector("#rule3").style.backgroundColor = colorValid;
-            }
-            else {
-                document.querySelector("#rule3").style.backgroundColor = colorInvalid;
-            }
-            
-            //4: Must contain upper & lower case characters
-            if( password === password.toLowerCase() || password === password.toUpperCase() ) {
-                document.querySelector("#rule4").style.backgroundColor = colorInvalid;
-            }
-            else {
-                document.querySelector("#rule4").style.backgroundColor = colorValid;
-            }
-            
-            //5: Cannot contain word 'password' lowercase (case insensitive)
-            if( password.indexOf("password") > -1 ) {
-                document.querySelector("#rule5").style.backgroundColor = colorInvalid;
-            }
-            else {
-                document.querySelector("#rule5").style.backgroundColor = colorValid;
-            }
-		}
-	</script>
+<body>
+  <div id="container">
+    <h1>Password Validator</h1>
+    <div id="password-container">
+      Password: <input type="text" id="password-input" />
+    </div>
+    <div id="validation-rules">
+      Validation Rules:
+      <div class="v-rule" id="rule1">1: Cannot be empty/blank.</div>
+      <div class="v-rule" id="rule2">2: Must contain at least 5 characters.</div>
+      <div class="v-rule" id="rule3">3: Must have at least one special character @ or #.</div>
+      <div class="v-rule" id="rule4">4: Must contain upper AND lower case characters.</div>
+      <div class="v-rule" id="rule5">5: Cannot contain word 'password' (case insensitive).</div>
+    </div>
+    <br style="clear:both">
+  </div>
+
+  <script type='text/javascript' src='main.js'></script>
+
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

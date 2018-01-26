@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Storage</title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    label {
+      width: 140px;
+      float: left;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .form-row {
+      margin-bottom: 10px;
+    }
+
+    #cookies-container,
+    #localStorage-container,
+    #sessionStorage-container,
+    #list-container {
+      border-bottom: 2px solid black;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    #list-container {
+      margin-bottom: 200px;
+    }
+
+    .pink {
+      background-color: pink;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="cookies-container">
+    <h2>Using Cookies</h2>
+    <div class="form-row">
+      <label>Username: </label><input type="text" id="cookieUsername">
+    </div>
+    <div class="form-row">
+      <label>Age: </label><input type="text" id="cookieAge">
+    </div>
+    <div class="form-row">
+      <label>Background color: </label><input type="text" id="cookieBgColor">
+    </div>
+    <button id="saveCookiesButton">Save info to cookies</button>
+    <button id="alertCookiesButton">Alert cookies</button>
+    <button id="displayCookiesButton">Get cookies and display them</button>
+  </div>
+
+  <div id="localStorage-container">
+    <h2>Using Local Storage</h2>
+    <div class="form-row">
+      <label>Username: </label><input type="text" id="lsUsername">
+    </div>
+    <div class="form-row">
+      <label>Age: </label><input type="text" id="lsAge">
+    </div>
+    <div class="form-row">
+      <label>Background color: </label><input type="text" id="lsBgColor">
+    </div>
+    <button id="saveLsButton">Save info to local storage</button>
+    <button id="alertLsButton">Alert local storage</button>
+    <button id="displayLsButton">Get local storage and display them</button>
+  </div>
+
+  <div id="sessionStorage-container">
+    <h2>Using Session Storage</h2>
+    <div class="form-row">
+      <label>Username: </label><input type="text" id="ssUsername">
+    </div>
+    <div class="form-row">
+      <label>Age: </label><input type="text" id="ssAge">
+    </div>
+    <div class="form-row">
+      <label>Background color: </label><input type="text" id="ssBgColor">
+    </div>
+    <button id="saveSsButton">Save info to session storage</button>
+    <button id="alertSsButton">Alert session storage</button>
+    <button id="displaySsButton">Get session storage and display them</button>
+  </div>
+
+  <div id="list-container">
+    <h2>Contact list that gets stored</h2>
+
+    <input type="text" id="firstname" placeholder="First Name" />
+    <input type="text" id="lastname" placeholder="Last Name" />
+
+    <button id="addButton">Add</button>
+    <button id="seeAllButton">See All </button>
+
+    <div id="list"></div>
+  </div>
+
+  <script type='text/javascript' src='main.js'></script>
+
+
+</body>
+
+</html>

@@ -1,126 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Quotes Twitter Feed</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Quotes Twitter Feed</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
+
 <body>
-    <!-- Logo & Title -->
-    <h1 class="row">
-        <img class="col-xs-4 col-xs-push-4 col-md-2 col-md-push-5" src="http://i0.kym-cdn.com/photos/images/original/001/266/834/fe0.gif" />
-    </h1>
-    <h2 class="text-center">Quotes Twitter Feed</h2>
-    <!-- Input Boxes -->
-    <form class="row">
-      <div class="form-group col-xs-6 col-xs-push-2">
-        <label for="quoteInput">Quote</label>
-        <input type="text" class="form-control" id="quoteInput" aria-describedby="emailHelp" placeholder="Enter quote">
-      </div>
-      <div class="form-group col-xs-2 col-xs-push-2">
-        <label for="authorInput">Author</label>
-        <input type="text" class="form-control" id="authorInput" placeholder="Enter author of the quote">
-      </div>
-    </form>
-    <!-- Buttons -->
-    <div class="row">
-       <div class="form-group col-xs-12 text-center">
-            <button id="tweetButton" class="btn btn-primary">Tweet</button>
-            <button id="showOldFirst" class="btn btn-success">Show All Tweets (oldest to newest)</button>
-            <button id="showNewFirst" class="btn btn-warning">Show All Tweets (newest to oldest)</button>
-            <button id="randomButton" class="btn btn-danger">Random Tweet</button>
-        </div>
+  <!-- Logo & Title -->
+  <h1 class="row">
+    <img class="col-xs-4 col-xs-push-4 col-md-2 col-md-push-5" src="http://i0.kym-cdn.com/photos/images/original/001/266/834/fe0.gif" />
+  </h1>
+  <h2 class="text-center">Quotes Twitter Feed</h2>
+  <!-- Input Boxes -->
+  <form class="row">
+    <div class="form-group col-xs-6 col-xs-push-2">
+      <label for="quoteInput">Quote</label>
+      <input type="text" class="form-control" id="quoteInput" aria-describedby="emailHelp" placeholder="Enter quote">
     </div>
-    <!-- Feed -->
-    <div class="row">
-        <div id="tweetBox" class="col-xs-10 col-xs-push-1 col-md-4 col-md-push-4">
-        </div>
+    <div class="form-group col-xs-2 col-xs-push-2">
+      <label for="authorInput">Author</label>
+      <input type="text" class="form-control" id="authorInput" placeholder="Enter author of the quote">
     </div>
-    <script>
-        /* 
-         * Two Arrays - with at least three quotes and authors 
-         */
-        var quotes = [
-            "I'm so glad I live in a world where there are Octobers.",
-            "Design is not just what it looks like and feels like. Design is how it works.",
-            "Be yourself; everyone else is already taken."
-        ];
-        var authors = [
-            "L.M. Montgomery",
-            "Steve Jobs",
-            "Oscar Wilde"
-        ];
-        
-        /* 
-         * Buttons 
-         */
-        // Tweet Button
-  		document.getElementById("tweetButton").onclick = function() {
-            document.getElementById("tweetBox").innerHTML = "";
-			var quote = document.getElementById("quoteInput").value;
-			var author = document.getElementById("authorInput").value;
-			if( isEmpty(quote) || isEmpty(author) ) {
-				alert("Error! Empty Input :-)");
-				return;
-			}
-			addTweet(quote, author);
-		}
-        // Oldest to Newest
-		document.getElementById("showOldFirst").onclick = function() {
-            document.getElementById("tweetBox").innerHTML = "";
-			for (var i = 0; i < quotes.length; i++) {
-				document.getElementById("tweetBox").innerHTML += 
-                "<blockquote>" + 
-                    "<p>" + quotes[i] + "</p>" +
-                    "<footer>" + authors[i] + "</footer>" +
-                "</blockquote>";
-			}
-		}
-        // Newest to Oldest
-		document.getElementById("showNewFirst").onclick = function() {
-            document.getElementById("tweetBox").innerHTML = "";
-			for (var i = quotes.length - 1; i >= 0; i--) {
-				document.getElementById("tweetBox").innerHTML += 
-                "<blockquote>" + 
-                    "<p>" + quotes[i] + "</p>" +
-                    "<footer>" + authors[i] + "</footer>" +
-                "</blockquote>";
-			}
-		}
-        // Random Button
-		document.querySelector("#randomButton").onclick = function() {
-            document.getElementById("tweetBox").innerHTML = "";
-            var randomNumber = Math.random();
-            randomNumber = randomNumber * quotes.length;
-            randomNumber = Math.floor(randomNumber);
-			document.getElementById("tweetBox").innerHTML += 
-                "<blockquote>" + 
-                    "<p>" + quotes[randomNumber] + "</p>" +
-                    "<footer>" + authors[randomNumber] + "</footer>" +
-                "</blockquote>";
-		}
-
-        /* 
-         * Functions 
-         */
-        // add new tweet
-		function addTweet(quote, author) {
-			quotes.push(quote);
-            authors.push(author);
-			document.getElementById("tweetBox").innerHTML += 
-                "<blockquote>" + 
-                    "<p>" + quote + "</p>" +
-                    "<footer>" + author + "</footer>" +
-                "</blockquote>";
-            document.getElementById("quoteInput").value = "";
-			document.getElementById("authorInput").value = "";
-		}
-        // check empty string
-	    function isEmpty(str) {
-            return (!str || str.length == 0);
-        }
-
-    </script>
+  </form>
+  <!-- Buttons -->
+  <div class="row">
+    <div class="form-group col-xs-12 text-center">
+      <button id="tweetButton" class="btn btn-primary">Tweet</button>
+      <button id="showOldFirst" class="btn btn-success">Show All Tweets (oldest to newest)</button>
+      <button id="showNewFirst" class="btn btn-warning">Show All Tweets (newest to oldest)</button>
+      <button id="randomButton" class="btn btn-danger">Random Tweet</button>
+    </div>
+  </div>
+  <!-- Feed -->
+  <div class="row">
+    <div id="tweetBox" class="col-xs-10 col-xs-push-1 col-md-4 col-md-push-4">
+    </div>
+  </div>
+  <script type='text/javascript' src='main.js'></script>
 </body>
+
 </html>

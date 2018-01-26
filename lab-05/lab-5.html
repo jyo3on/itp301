@@ -1,112 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Email Validator</title>
-	<style>
-		#container {
-			width:	600px;
-			margin:	auto;
-		}
-        #alarm1, #alarm2, #alarm3 {
-            color: red;
-            display: none;
-        }
-        #confirmation {
-            color: green;
-            display: none;
-        }
-	</style>
-</head>
-<body>
-	<div id="container">
-		<h1>Email Validator</h1>
-        <div>
-			=> Email: <input type="email" id="email-input" />
-		</div>
-		<br>
-		<button id="validateButton">Validate</button>
-		<p id="alarm1">Error: Input box must not be blank</p>
-        <p id="alarm2">Error: Email address must have the ‘@’ sign somewhere</p>
-        <p id="alarm3">Error: Email address must have at least one ‘.’ after the ‘@’ sign.</p>
-        <p id="confirmation">validation confirmed</p>
-        
-	</div>
 
-	<script>
-        
-        var showAlarm = "block";
-        var hideAlarm = "none";
-    
-        document.querySelector("#validateButton").onclick = function() {
-            var userInput = document.querySelector("#email-input").value;
-            validateEmail(userInput);
-        }
-    
-		function validateEmail(email){
-            var confirmation = 0;
-            
-            //1: Cannot be empty or blank
-            if( email == "" || email.length == 0 ) {
-                document.querySelector("#alarm1").style.display = showAlarm;
-            }
-            else {
-                document.querySelector("#alarm1").style.display = hideAlarm;
-                confirmation ++;
-            }
-            
-            //2: Must have at least one special character @ or #
-            if( email.indexOf("@") == -1 ) { 
-                document.querySelector("#alarm2").style.display = showAlarm;
-            }
-            else {
-                document.querySelector("#alarm2").style.display = hideAlarm;
-                confirmation ++;
-            }
-            
-            //3: Email address must have at least one ‘.’ after the ‘@’ sign.
-            if( email.lastIndexOf(".") <= email.indexOf("@")) {
-                document.querySelector("#alarm3").style.display = showAlarm;
-            }
-            else {
-                document.querySelector("#alarm3").style.display = hideAlarm;
-                confirmation ++;
-            }
-            
-            //4: ALL
-            if( confirmation == 3) {
-                document.querySelector("#confirmation").style.display = showAlarm;
-                document.querySelector("#email-input").value = "";
-            }
-            else {
-                document.querySelector("#confirmation").style.display = hideAlarm;
-            }
-		}
-	</script>
+<head>
+  <meta charset="UTF-8">
+  <title>Email Validator</title>
+  <style>
+    #container {
+      width: 600px;
+      margin: auto;
+    }
+
+    #alarm1,
+    #alarm2,
+    #alarm3 {
+      color: red;
+      display: none;
+    }
+
+    #confirmation {
+      color: green;
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <h1>Email Validator</h1>
+    <div>
+      => Email: <input type="email" id="email-input" />
+    </div>
+    <br>
+    <button id="validateButton">Validate</button>
+    <p id="alarm1">Error: Input box must not be blank</p>
+    <p id="alarm2">Error: Email address must have the ‘@’ sign somewhere</p>
+    <p id="alarm3">Error: Email address must have at least one ‘.’ after the ‘@’ sign.</p>
+    <p id="confirmation">validation confirmed</p>
+
+  </div>
+
+  <script src="main.js"></script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

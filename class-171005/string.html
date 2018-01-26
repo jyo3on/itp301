@@ -4,199 +4,117 @@
 
 <head>
 
-	<title>String Operations</title>
+  <title>String Operations</title>
 
-	<style>
-		.controls {
-			margin: 15px;
-		}
+  <style>
+    .controls {
+      margin: 15px;
+    }
 
-		.highlight1 {
-			background-color: #FF0;
-		}
+    .highlight1 {
+      background-color: #FF0;
+    }
 
-		.highlight2 {
-			background-color: #0F0;
-		}
+    .highlight2 {
+      background-color: #0F0;
+    }
 
-		.message {
-			font-style: italic;
-			margin: 10px 50px;
-		}
-	</style>
+    .message {
+      font-style: italic;
+      margin: 10px 50px;
+    }
+
+  </style>
 
 </head>
 
 <body>
-	<h2>String Practice</h2>
+  <h2>String Practice</h2>
 
-	<div id="info" class="controls">
-		When University of Southern California first opened its doors to 53 students and 10 teachers in 1880, the city still lacked paved streets, electric lights, telephones and a reliable fire alarm system. Today, University of Southern California is home to more than 41,000 students and nearly 3,800 full-time faculty, and is located in the heart of one of the biggest metropolises in the world.
-		<br/><br/>
-		A simpler example with special characters !@#$%^&*()-=_+ and numbers 123-456_890+234a. Some words: book, hook, hem, heel, heed, sheep, feed, color, colour.
-	</div>
-	<hr/>
-	<div class="controls">
-		Get substring from index
-		<input type="text" id="substringStart">
-		to
-		<input type="text" id="substringEnd">
-		<button id="getSubstringButton">Get Substring</button>
-		<div id="substringDisplay">
-			<strong>Substring:</strong>
-		</div>
-	</div>
+  <div id="info" class="controls">
+    When University of Southern California first opened its doors to 53 students and 10 teachers in 1880, the city still lacked paved streets, electric lights, telephones and a reliable fire alarm system. Today, University of Southern California is home to more than 41,000 students and nearly 3,800 full-time faculty, and is located in the heart of one of the biggest metropolises in the world.
+    <br/><br/> A simpler example with special characters !@#$%^&*()-=_+ and numbers 123-456_890+234a. Some words: book, hook, hem, heel, heed, sheep, feed, color, colour.
+  </div>
+  <hr/>
+  <div class="controls">
+    Get substring from index
+    <input type="text" id="substringStart"> to
+    <input type="text" id="substringEnd">
+    <button id="getSubstringButton">Get Substring</button>
+    <div id="substringDisplay">
+      <strong>Substring:</strong>
+    </div>
+  </div>
 
-	<div class="controls">
-		Find & replace: 
-		<input type="text" id="replaceOld">
-		with
-		<input type="text" id="replaceNew">
-		<button id="replaceButton">Replace</button>
-		<button id="replaceAllButton">Replace All</button>
-	</div>
+  <div class="controls">
+    Find & replace:
+    <input type="text" id="replaceOld"> with
+    <input type="text" id="replaceNew">
+    <button id="replaceButton">Replace</button>
+    <button id="replaceAllButton">Replace All</button>
+  </div>
 
-	<div class="controls">
-		Highlight text:
-		<input type="text" id="highlightText">
-		<button id="highlightButton" >Highlight</button>
-		<button id="highlightAllButton">Highlight All</button>
-		<div id="highlightTextMsg" class="message">
-		</div>
-	</div>
+  <div class="controls">
+    Highlight text:
+    <input type="text" id="highlightText">
+    <button id="highlightButton">Highlight</button>
+    <button id="highlightAllButton">Highlight All</button>
+    <div id="highlightTextMsg" class="message">
+    </div>
+  </div>
 
-	<div class="controls">
-		Highlight text between 
-		<input type="text" id="highlightStart">
-		and 
-		<input type="text" id="highlightEnd">
-		<button id="highlightBetweenButton">Highlight</button>
-		<div id="highlightBetweenMsg" class="message">
-		</div>
-	</div>
+  <div class="controls">
+    Highlight text between
+    <input type="text" id="highlightStart"> and
+    <input type="text" id="highlightEnd">
+    <button id="highlightBetweenButton">Highlight</button>
+    <div id="highlightBetweenMsg" class="message">
+    </div>
+  </div>
 
-	<h3>RegExp Search</h3>
+  <h3>RegExp Search</h3>
 
-	<div class="controls">
-		Pattern:
+  <div class="controls">
+    Pattern:
 
-		<input type="text" id="regExpSearch">
+    <input type="text" id="regExpSearch"> Modifiers:
 
-		Modifiers:
+    <input type="checkbox" id="regExpSearch-case">
+    <label for="regExpSearch-case">i</label>
 
-		<input type="checkbox" id="regExpSearch-case">
-		<label for="regExpSearch-case">i</label>
+    <input type="checkbox" id="regExpSearch-global">
+    <label for="regExpSearch-global">g</label>
 
-		<input type="checkbox" id="regExpSearch-global">
-		<label for="regExpSearch-global">g</label>
+    <button id="searchButton">Search</button>
+  </div>
+  <div class="controls">
+    Matches:
+    <ol id="regExpMatchesList">
 
-		<button id="searchButton">Search</button>
-	</div>
-	<div class="controls">
-		Matches:
-		<ol id="regExpMatchesList">
-			
-		</ol>
-	</div>
+    </ol>
+  </div>
 
-	<h2>String Validation</h2>
+  <h2>String Validation</h2>
 
-	<div class="controls">
-		<div style="margin:10px 0;">Acceptable formats: 1234567890, (123) 456-7890, 123-456-7890</div>
-		Phone:
-		<input type="text" id="phone">
-		<button onclick="validatePhone();">Validate</button>
-		<button onclick="formatPhone();">Format</button>
-		<div id="phoneMsg" class="message"></div>
-	</div>
+  <div class="controls">
+    <div style="margin:10px 0;">Acceptable formats: 1234567890, (123) 456-7890, 123-456-7890</div>
+    Phone:
+    <input type="text" id="phone">
+    <button onclick="validatePhone();">Validate</button>
+    <button onclick="formatPhone();">Format</button>
+    <div id="phoneMsg" class="message"></div>
+  </div>
 
-	<div class="controls">
-		Email:
-		<input type="text" id="email">
-		<button onclick="validateEmail();">Validate</button>
-		<div id="emailMsg" class="message"></div>
-	</div>
+  <div class="controls">
+    Email:
+    <input type="text" id="email">
+    <button onclick="validateEmail();">Validate</button>
+    <div id="emailMsg" class="message"></div>
+  </div>
 
-	<script>
-		document.querySelector("#getSubstringButton").onclick = function() {
-			var startIndex = document.querySelector("#substringStart").value;
-			var lastIndex = document.querySelector("#substringEnd").value;
-			var text = document.querySelector("#info").innerHTML;
+  <script type='text/javascript' src='main.js'></script>
 
-			var newString = text.substring(startIndex, lastIndex);
 
-			console.log(newString);
-
-			document.querySelector("#substringDisplay").innerHTML += newString;
-		}
-
-		document.querySelector("#replaceButton").onclick = function() {
-			//var greeting = "Hello World!!";
-			//var newGreeting = greeting.replace("World", "Trojans");
-
-			//console.log(newGreeting);
-			//console.log(greeting);
-
-			var text = document.querySelector("#info").innerHTML;
-			var oldString = document.querySelector("#replaceOld").value;
-			var newString = document.querySelector("#replaceNew").value;
-
-			// Let's replace!
-			var newText = text.replace(oldString, newString);
-
-			// Show on console for testing purposes
-			console.log(newText);
-
-			// Display the change on the webpage
-			document.querySelector("#info").innerHTML = newText;
-		}
-        
-        document.querySelector("#highlightButton").onclick = function() {
-            var text = document.querySelector("#info").innerHTML;
-            var stringToHighlight = document.querySelector("#highlightText").value;
-            
-            var newString = "<span class='highlight1'>" + stringToHighlight + "</span>";
-            
-            var newText = text.replace(stringToHighlight, newString);
-            document.querySelector("#info").innerHTML = newText;
-        }
-        
-        document.querySelector("#replaceAllButton").onclick = function() {
-            var text = document.querySelector("#info").innerHTML;
-            var oldString = document.querySelector("#replaceOld").value;
-            var newString = document.querySelector("#replaceNew").value;
-            
-            /* One way to set up RegEx(뤠졕스) */
-//            var regExPattern = /students/gi; //i는 case-insensitive, g는 global
-            
-            /* Second way to set up 뤠쥐엑스 */
-            var regExPattern = new RegExp(oldString, "gi");
-            
-            var newText = text.replace(regExPattern, newString);
-            document.querySelector("#info").innerHTML = newText;            
-        }
-        
-        document.querySelector("#highlightAllButton").onclick = function() {
-            var text = document.querySelector("#info").innerHTML;
-            var stringToHighlight = document.querySelector("#highlightText").value;
-            
-            var newString = "<span class='highlight2'>" + stringToHighlight + "</span>";
-            
-            var regExPattern = new RegExp(stringToHighlight, "g");
-            
-            var newText = text.replace(stringToHighlight, newString);
-            document.querySelector("#info").innerHTML = newText;
-        }
-	</script>
-	
 </body>
 
 </html>
-
-
-
-
-
-
-
-

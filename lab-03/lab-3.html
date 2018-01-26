@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Functions Lab</title>
+</head>
+
+<body>
+  <div style="float:left; width:500px;">
+    <form id="form1" name="f1" method="post" action="">
+      <p>Image Scaling</p>
+      <p>
+        <label>Width
+          <input name="w" type="text" id="widthField" placeholder="EX) 100px" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Height 
+          <input name="h" type="text" id="heightField" placeholder="EX) 100px"/>
+        </label>
+      </p>
+      <p>
+        <label>
+          Border
+          <input name="b" type="text" id="borderField" placeholder="EX) 3px solid red" />
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="button" name="Button" value="Scale Image" id="scaleButton">
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="button" name="Button" value="Current Image Info" id="infoButton">
+        </label>
+      </p>
+    </form>
+  </div>
+  <div style="float:left;width:400px">
+    <img name="theimage" id="theimage" src="http://scf.usc.edu/~nayeonki/itp301/familyguy.jpg" style="width:320px; height:400px" />
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

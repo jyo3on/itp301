@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Timers</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      transform: scale(1) rotate(0deg) translate(0, 0);
+      transition: all 1s ease-in;
+    }
+
+    #box.move {
+      transform: scale(1.5) rotate(360deg) translate(600px, 0);
+    }
+
+    #countdown {
+      width: 400px;
+      padding: 20px;
+      border: 2px solid black;
+      text-align: center;
+    }
+
+    #countdown div {
+      font-size: 20px;
+    }
+
+    #countdown button {
+      margin: 20px 5px 0px 0px;
+      padding: 10px;
+    }
+
+    .blink {
+      animation: blink .3s infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        background: white;
+      }
+      100% {
+        background: red;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <button id="alertButton">Show alert box after three seconds</button>
+  <button id="cancelButton">Cancel before three seconds</button>
+
+  <div id="box">
+    I am a box.
+  </div>
+  Set seconds: <input type="text" id="secondsInput"> <button id="setButton">Set Countdown</button>
+  <div id="countdown">
+    <h1>Countdown</h1>
+    <div>
+      <span id="seconds">10</span> seconds
+    </div>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+  </div>
+
+  <script type='text/javascript' src='main.js'></script>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Animation</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 20px 0 0 20px;
+      float: left;
+      font-size: 14px;
+      background-color: yellow;
+    }
+
+    .box1 {
+      float: none;
+      background-color: black;
+      color: white;
+      transition: background-color .5s ease-in-out, color 2s ease, font-size 1s ease;
+      -webkit-transition: background-color .5s ease-in-out, color 2s ease, font-size 1s ease;
+      -moz-transition: background-color .5s ease-in-out, color 2s ease, font-size 1s ease;
+      -ms-transition: background-color .5s ease-in-out, color 2s ease, font-size 1s ease;
+      -o-transition: background-color .5s ease-in-out, color 2s ease, font-size 1s ease;
+    }
+
+    .box1:hover {
+      background-color: red;
+      color: blue;
+      font-size: 20px;
+    }
+
+    .box2 {
+      transform: rotate(45deg);
+    }
+
+    .box3 {
+      transform: scale(0.5);
+    }
+
+    .box4 {
+      transform: skew(-10deg, 0deg);
+    }
+
+    .box5 {
+      transform: translate(50px, 50px);
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .bg {
+      margin-top: 50px;
+      width: 100%;
+    }
+
+    .box6 {
+      float: none;
+      background-color: green;
+      transform: translate(0, 0);
+      transition: transform 2s ease;
+    }
+
+    .bg:hover .box6 {
+      cursor: pointer;
+      transform: translate(500px, 0);
+    }
+
+    .box7 {
+      background: orange;
+      /*
+      animation-name: move;
+      animation-duration: 3s;
+      animation-delay: .5s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+*/
+    }
+
+    .move {
+      animation: move 2s .5s forwards;
+    }
+
+    @keyframes move {
+      50% {
+        transform: translate(400px, 0);
+        background-color: beige;
+      }
+      75% {
+        background-color: mediumpurple;
+      }
+      100% {
+        transform: translate(500px, -400px);
+        background-color: pink;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="outercontainer">
+    <div class="box box1">
+      Hello, I'm a box.
+    </div>
+    <div class="box box2">
+      Hello, I'm a rotated box.
+    </div>
+    <div class="box box3">
+      Hello, I'm a scaled box.
+    </div>
+    <div class="box box4">
+      Hello, I'm a skewed box.
+    </div>
+    <div class="box box5">
+      Hello, I'm a box that translates.
+    </div>
+    <div class="clear"></div>
+    <div class="bg">
+      <div class="box box6">
+        Hello, I'm another box.
+      </div>
+    </div>
+    <br>
+    <button id="clickButton">Click Me</button>
+    <br>
+    <div class="box box7">
+      Hello, I'm the last box
+    </div>
+  </div>
+  <script type='text/javascript' src='main.js'></script>
+
+</body>
+
+</html>

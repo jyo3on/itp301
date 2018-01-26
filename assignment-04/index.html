@@ -1,270 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>JS Calculator</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-	<style>
-		#display {
-			font-size: 2em;
-		}
-	</style>
+  <style>
+    #display {
+      font-size: 2em;
+    }
+
+  </style>
 </head>
+
 <body>
-	<div class="container">
-		<div class="row">
-			<h1 class="col-12 text-center mt-5">JS Calculator</h1>
-			<p class="col-12 text-center">You can do operations on more than two numbers<br/>ONLY using addition and subtraction, NOT multiplication or division</p>
-		</div> <!-- .row -->
-		<div class="row">
-			<div id="calculator" class="mt-4 col-12 col-md-6 ml-md-auto mr-md-auto col-lg-4">
-				<div class="row">
-					<input type="text" id="display" class="col-12 text-right form-control" value="OFF" disabled="true">
-				</div> <!-- .row -->
-				<div class="row">
-					<button id="onButton" class="col-3 btn btn-lg btn-outline-dark">ON</button>
-					<button id="offButton" class="col-3 btn btn-lg btn-outline-dark">OFF</button>
-					<button id="acButton" class="col-6 btn btn-lg btn-outline-dark">AC</button>
-				</div> <!-- .row -->
-				<div class="row">
-					<button class="number col-3 btn btn-lg btn-outline-dark">7</button>
-					<button class="number col-3 btn btn-lg btn-outline-dark">8</button>
-					<button class="number col-3 btn btn-lg btn-outline-dark">9</button>
-					<button id="divideButton" class="operation col-3 btn btn-lg btn-outline-dark">/</button>
-				</div> <!-- .row -->
-				<div class="row">
-					<button class="number col-3 btn btn-lg btn-outline-dark">4</button>
-					<button class="number col-3 btn btn-lg btn-outline-dark">5</button>
-					<button class="number col-3 btn btn-lg btn-outline-dark">6</button>
-					<button id="multiplyButton" class="operation col-3 btn btn-lg btn-outline-dark">x</button>
-				</div> <!-- .row -->
-				<div class="row">
-					<button class="number col-3 btn btn-lg btn-outline-dark">1</button>
-					<button class="number col-3 btn btn-lg btn-outline-dark">2</button>
-					<button class="number col-3 btn btn-lg btn-outline-dark">3</button>
-					<button id="minusButton" class="operation col-3 btn btn-lg btn-outline-dark">-</button>
-				</div> <!-- .row -->
-				<div class="row">
-					<button class="number col-3 btn btn-lg btn-outline-dark">0</button>
-					<button class="number col-3 btn btn-lg btn-outline-dark">.</button>
-					<button id="equalButton" class="col-3 btn btn-lg btn-outline-dark">=</button>
-					<button id="plusButton" class="operation col-3 btn btn-lg btn-outline-dark">+</button>
-				</div> <!-- .row -->
-			</div> <!-- #calculator -->
-		</div> <!-- .row -->
-	</div> <!-- .container -->
+  <div class="container">
+    <div class="row">
+      <h1 class="col-12 text-center mt-5">JS Calculator</h1>
+      <p class="col-12 text-center">You can do operations on more than two numbers<br/>ONLY using addition and subtraction, NOT multiplication or division</p>
+    </div>
+    <!-- .row -->
+    <div class="row">
+      <div id="calculator" class="mt-4 col-12 col-md-6 ml-md-auto mr-md-auto col-lg-4">
+        <div class="row">
+          <input type="text" id="display" class="col-12 text-right form-control" value="OFF" disabled="true">
+        </div>
+        <!-- .row -->
+        <div class="row">
+          <button id="onButton" class="col-3 btn btn-lg btn-outline-dark">ON</button>
+          <button id="offButton" class="col-3 btn btn-lg btn-outline-dark">OFF</button>
+          <button id="acButton" class="col-6 btn btn-lg btn-outline-dark">AC</button>
+        </div>
+        <!-- .row -->
+        <div class="row">
+          <button class="number col-3 btn btn-lg btn-outline-dark">7</button>
+          <button class="number col-3 btn btn-lg btn-outline-dark">8</button>
+          <button class="number col-3 btn btn-lg btn-outline-dark">9</button>
+          <button id="divideButton" class="operation col-3 btn btn-lg btn-outline-dark">/</button>
+        </div>
+        <!-- .row -->
+        <div class="row">
+          <button class="number col-3 btn btn-lg btn-outline-dark">4</button>
+          <button class="number col-3 btn btn-lg btn-outline-dark">5</button>
+          <button class="number col-3 btn btn-lg btn-outline-dark">6</button>
+          <button id="multiplyButton" class="operation col-3 btn btn-lg btn-outline-dark">x</button>
+        </div>
+        <!-- .row -->
+        <div class="row">
+          <button class="number col-3 btn btn-lg btn-outline-dark">1</button>
+          <button class="number col-3 btn btn-lg btn-outline-dark">2</button>
+          <button class="number col-3 btn btn-lg btn-outline-dark">3</button>
+          <button id="minusButton" class="operation col-3 btn btn-lg btn-outline-dark">-</button>
+        </div>
+        <!-- .row -->
+        <div class="row">
+          <button class="number col-3 btn btn-lg btn-outline-dark">0</button>
+          <button class="number col-3 btn btn-lg btn-outline-dark">.</button>
+          <button id="equalButton" class="col-3 btn btn-lg btn-outline-dark">=</button>
+          <button id="plusButton" class="operation col-3 btn btn-lg btn-outline-dark">+</button>
+        </div>
+        <!-- .row -->
+      </div>
+      <!-- #calculator -->
+    </div>
+    <!-- .row -->
+  </div>
+  <!-- .container -->
 
-	<script>
-
-		// Some guidelines below. You do not have to follow this strictly if you would like to write it in a different way.
-
-		// Use three variables to track the first two numbers and the operation 
-		var firstNumber = 0;
-        var secondNumber = 0;
-        var currentNumber = 0;
-		var theMathFunction = "";
-        var result = 0;
-        var power = false;
-        
-        /* 
-         * Off & On & AC Buttons
-        */
-        
-        document.getElementById("offButton").onclick = function() {
-            // the display should be disabled
-            document.getElementById("display").disabled = true;
-            // the display should display the letters “OFF”
-            document.getElementById("display").value = "OFF";
-            // change the value of power
-            power = false;
-            // for credit
-            theMathFunction = "";
-        }
-        document.getElementById("onButton").onclick = function() {
-            // the display should be enabled
-            document.getElementById("display").disabled = false;
-            // clears the display
-            reset();
-            // change the value of power
-            power = true;
-            // for credit
-            theMathFunction = "";
-        }
-        document.getElementById("acButton").onclick = function() {
-            if (power==false){
-            }
-            else {
-                // clears the display
-                reset();
-                //for credit
-                theMathFunction = "";
-            }
-        }
-        
-        /* 
-         * Number Buttons
-        */
-    
-        var numberButtons = document.getElementsByClassName("number");
-        for (var i = 0; i < numberButtons.length; i++) {
-            numberButtons[i].onclick = function (){
-                if (power==false){
-                }
-                else {
-                    // Add the clicked number on display
-                    document.getElementById("display").value += this.innerHTML;
-                }
-            }
-        };
-
-        /* 
-         * Operation Buttons
-        */
-
-        document.getElementById("plusButton").onclick = function() {
-            if (power==false){
-            }
-            else {
-                if (theMathFunction=="+") {
-                    // extra credit
-                    currentNumber = document.getElementById("display").value;
-                    currentNumber = parseFloat(currentNumber);
-                    firstNumber = firstNumber + currentNumber;
-                    theMathFunction = "+";
-                    reset();
-                }
-                else if (theMathFunction=="-") {
-                    // extra credit
-                    currentNumber = document.getElementById("display").value;
-                    currentNumber = parseFloat(currentNumber);
-                    firstNumber = firstNumber - currentNumber;
-                    theMathFunction = "+";
-                    reset();
-                }
-                else {
-                    // call function
-                    saveFirstNumber("+");
-                }
-            }
-        }
-        
-        document.getElementById("minusButton").onclick = function() {
-            if (power==false){
-            }
-            else {
-                if (theMathFunction=="+") {
-                    // extra credit
-                    currentNumber = document.getElementById("display").value;
-                    currentNumber = parseFloat(currentNumber);
-                    firstNumber = firstNumber + currentNumber;
-                    theMathFunction = "-";
-                    reset();
-                }
-                else if (theMathFunction=="-") {
-                    // extra credit
-                    currentNumber = document.getElementById("display").value;
-                    currentNumber = parseFloat(currentNumber);
-                    firstNumber = firstNumber - currentNumber;
-                    theMathFunction = "-";
-                    reset();
-                }
-                else {
-                    // call function
-                    saveFirstNumber("-");
-                }
-            }
-        }
-        
-        document.getElementById("multiplyButton").onclick = function() {
-            if (power==false){
-            }
-            else {
-                // call function
-                saveFirstNumber("*");
-            }
-        }
-        
-        document.getElementById("divideButton").onclick = function() {
-            if (power==false){
-            }
-            else {
-                // call function
-                saveFirstNumber("/");
-            }
-        }
-
-        /* 
-         * Equal Button
-        */
-
-        document.getElementById("equalButton").onclick = function() {
-            if (power==false){
-            }
-            else {
-                // perform calculation
-                performCalculation();
-            }
-        }
-        
-        
-        /* 
-         * Functions
-        */
-
-		function reset() {
-			// Clear all variables
-            document.getElementById("display").value = ""
-		}
-
-		function saveFirstNumber( mathFunction ) {
-			// Save the first number
-            firstNumber = document.getElementById("display").value;
-            firstNumber = parseFloat(firstNumber);
-			// Save the selected math function (+,-,/,*)
-            theMathFunction = mathFunction;
-			// Clear the display
-            reset();
-		}
-
-		function performCalculation(  ) {
-            // Save the second number
-            secondNumber = document.getElementById("display").value;
-            // Change the variable type
-            secondNumber = parseFloat(secondNumber);
-            // Calculate
-			if ( theMathFunction == "+" ) {
-                result = firstNumber + secondNumber;
-            }
-            else if ( theMathFunction == "-" ) {
-                result = firstNumber - secondNumber;
-            }
-            else if ( theMathFunction == "*" ) {
-                result = firstNumber * secondNumber;
-            }
-            else if ( theMathFunction == "/" ) {
-                result = firstNumber / secondNumber;
-            }
-            else {
-                console.log("Something is wrong");
-            }
-			// Display result
-            reset();
-            document.getElementById("display").value = result;
-		}
-        
-        /* 
-         * Not a Number
-        */
-        
-        document.getElementById("display").onchange = function(){
-            if ( isNaN(document.getElementById("display").value) == true ){
-                alert("Not a Number");
-                reset();
-            }
-        };
-        
-	</script>
+  <script type='text/javascript' src='main.js'></script>
 </body>
+
 </html>

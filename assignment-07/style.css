@@ -1,0 +1,61 @@
+body {
+  font-family: '애플 SD 산돌고딕 Neo', Apple SD Gothic Neo, Helvetica, sans-serif;
+  text-align: center;
+  background: #d9a7c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+h1 {
+  font-weight: 100;
+}
+header {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+input, button {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 1.2em 1.8em;
+  margin: 0 auto 1.8em;
+  transition: all .5s ease-in-out;
+  border-radius: 300px;
+  border: 1px solid transparent;
+}
+input {
+  border-color: #efefef;
+}
+input:focus {
+  outline: none;
+  border-color: #ddd;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+}
+button {
+  border-color: palevioletred;
+  color: palevioletred;
+  background-color: transparent;
+}
+button:hover, button:focus {
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: palevioletred;
+  border-color: palevioletred;
+}
+main {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+img {
+  border: 5px solid transparent;
+  width: 210px;
+}
+.colored img {
+  border-color: palevioletred;
+}
+

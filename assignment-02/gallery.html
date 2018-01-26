@@ -1,65 +1,44 @@
 <!doctype HTML>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <script src="jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
-    <style>
-        /* 3. selected */
-        .selected {
-            border: 2px solid turquoise;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* 3. selected */
+
+    .selected {
+      border: 2px solid turquoise;
+    }
+
+  </style>
 </head>
+
 <body>
   <!-- 1. topic for gallery -->
   <h1>My Treasures</h1>
   <!-- 2-1. outercontainer -->
-   <div id="outercontainer">
-       <!-- 2-3. main photo container -->
-       <div id="main">
-           <img src="images/01.gif" />
-       </div> 
-       <!-- 2-4. caption -->
-       <p id="caption">I treasure my valuable people :) They make me happy</p>
-       <!-- 2-2. thumbnail container -->
-       <div id="thumbnailcontainer">
-           <img class="thumbnail selected" src="images/01.gif" caption="I treasure my valuable people :) They make me happy"/>
-           <img class="thumbnail" src="images/02.jpg" caption="First and foremost, My family"/>
-           <img class="thumbnail" src="images/03.jpg" caption="My boyfriend hahah"/>
-           <img class="thumbnail" src="images/04.jpg" caption="My best friends"/>
-           <img class="thumbnail" src="images/05.jpg" caption="More of my friends"/>
-           <img class="thumbnail" src="images/06.jpg" caption="My puppy :)"/>
-       </div>
-   </div>
-   
-   <script>
-       $(document).ready( function() {
-            /* 4-1. transparent */
-            $(".thumbnail").css("opacity", "0.5");
-            /* 4-2. mouseenter opaque */
-            $(".thumbnail").on("mouseenter", function() {
-                $(this).css("opacity", "1");
-            });
-            /* 4-3. mouseleave transparent */
-            $(".thumbnail").on("mouseleave", function() {
-                $(this).css("opacity", "0.5");
-            });
-            /* 4-4. click */
-            $(".thumbnail").on("click", function() {
-                /* 4-4-1&2. change photo & fade */
-                var srcRelative = $(this).attr("src");
-                $("#main img").attr("src", srcRelative).css("display", "none").fadeIn();
-                /* 4-4-3. caption*/
-                var captionRelative = $(this).attr("caption");
-                $("#caption").text(captionRelative);
-                /* 4-4-4. selected*/
-                $(".selected").removeClass("selected");
-                $(this).addClass("selected");
-            })
-       });
-       /* reference: jQuery document & lecture notes */
-   </script>
+  <div id="outercontainer">
+    <!-- 2-3. main photo container -->
+    <div id="main">
+      <img src="images/01.gif" />
+    </div>
+    <!-- 2-4. caption -->
+    <p id="caption">I treasure my valuable people :) They make me happy</p>
+    <!-- 2-2. thumbnail container -->
+    <div id="thumbnailcontainer">
+      <img class="thumbnail selected" src="images/01.gif" caption="I treasure my valuable people :) They make me happy" />
+      <img class="thumbnail" src="images/02.jpg" caption="First and foremost, My family" />
+      <img class="thumbnail" src="images/03.jpg" caption="My boyfriend hahah" />
+      <img class="thumbnail" src="images/04.jpg" caption="My best friends" />
+      <img class="thumbnail" src="images/05.jpg" caption="More of my friends" />
+      <img class="thumbnail" src="images/06.jpg" caption="My puppy :)" />
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
+
 </html>

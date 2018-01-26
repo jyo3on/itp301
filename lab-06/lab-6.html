@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>JSONP</title>
+  <style>
+    table,
+    th,
+    td,
+    tr {
+      border: 1px solid #CCC;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th,
+    td {
+      padding: 10px;
+    }
+
+    #search-results {
+      margin-top: 20px;
+    }
+
+    #results-count {
+      margin-bottom: 10px;
+    }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+  <h1>iTunes Music Search</h1>
+
+  <div id="search-box">
+    <input type="text" id="searchTerm" placeholder="Search.." />&nbsp;
+    <input type="number" id="searchLimit" placeholder="Limit Result Number" />&nbsp;
+    <button id="searchButton">Search</button>
+  </div>
+  <div id="search-results">
+    <div id="results-count">Displaying <strong>0</strong> result(s).</div>
+    <table id="results-table">
+      <thead>
+        <tr>
+          <th>
+            Cover
+          </th>
+          <th>
+            Artist
+          </th>
+          <th>
+            Track
+          </th>
+          <th>
+            Album
+          </th>
+          <th>
+            Preview
+          </th>
+          <th>
+            Genre
+          </th>
+          <th>
+            Track Price
+          </th>
+          <th>
+            Album Price
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <script src="main.js">
+
+
+  </script>
+
+  <!-- get around CORS by script tag
+	<script src="https://itunes.apple.com/search?term=beatles&callback=callbackFunction"></script>-->
+
+</body>
+
+</html>
